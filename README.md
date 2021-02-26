@@ -1,6 +1,8 @@
-Credits & Source from: https://github.com/sendmail2krrish/eCommerce-site-using-Node-Express-js
+Credits & Source from: https://github.com/sendmail2krrish/eCommerce-site-using-Node-Express-js </br>
+Reference: https://github.com/learngcpwithmahesh/Dress4Win.git </br>
+<i> Many thanks to my Instructor, Mahesh for guilding me in the implementation of this project.</i>
 
-# Dress4Win
+# Dress4Win Mini Implementation in GCP
 
 ### Launching db-server
 1. Provision a Google Compute Engine (GCE) <br/>
@@ -10,15 +12,16 @@ Credits & Source from: https://github.com/sendmail2krrish/eCommerce-site-using-N
 3. Comment bind-address configuration using <b> vi /etc/mysql/mysql.conf.d/mysqld.cnf </b> and save the configuration using ESC followed :wq! <br/>
 4. Restart MySQL Service using <b>systemctl restart mysql</b> <br/>
 5. Logging to mysql using <b>mysql -h 127.0.0.1 -u root -p</b>  <br/>
-6. Create a database named eCommerce using <b>CREATE DATABASE eCommerce </b> <br/>
+6. Create a database named eCommerce using <b>CREATE DATABASE Dress4win </b> <br/>
 7. Run this command <b> GRANT ALL PRIVILEGES ON \*.\* TO 'root'@'%' IDENTIFIED BY 'P@ssw0rd2020';</b> to allow mysql to be accessed from app-server <br/>
 7. Exit mysql session <br/>
-8. Change directory to home directory using <b>cd ~</b> and run <b> git clone https://github.com/learngcpwithmahesh/Dress4Win.git </b>  <br/>
-9. Change directory to Dress4Win/sql <br/>
-10. Create the table schema using <b> mysql -h 127.0.0.1 -u root -p < ecommerce.sql </b> <br/>
+8. Change directory to home directory using <b>cd ~</b> and run <b> git clone https://github.com/Jangofett-162/Dress4Win6m3grp2.git </b>  <br/>
+9. Change directory to Dress4Win6m3grp2/sql <br/>
+10. Create the table schema using <b> mysql -h 127.0.0.1 -u root -p Dress4win < edited.sql </b> <br/>
  
 ### Launching app-server
-1. Provision a Google Compute Engine (GCE) with below startup script <br/>
+1. Provision a Google Compute Engine (GCE) with below startup script <br/></br>
+<i> Preferable to run the below start-up script in higher machine type (n1-standard-1), create an image from it and run it in a lower machine type (f1-micro) </i>
 <b>
 apt update <br/>
 apt install -y git <br/>
@@ -33,3 +36,8 @@ npm install <br/>
 2. SSH into the app-server. Switch as root user using sudo -s and change the database IP address in database/config.js file <br/>
 3. Now, run the Node JS app to in daemon mode using <b>forever start index.js </b> <br/>
 4. Use the external IP of app-server to access the Dress4Win App <br/>
+
+### Customise your product image
+1. In home directory, cd ~/Dress4Win6m3grp2/views/components/product/ <br/>
+2. Edit grid.ejs <i> using the editor of your choice </i>, change the source to the source of your image <i> (line 5 and line 9) </i>  <br/>
+E.g. src="https://dress4win.fashionantics.tk/image/<%= product.picture %>" to src="[your_image_endpoint_url]/<%= product.picture %>" <br/>
