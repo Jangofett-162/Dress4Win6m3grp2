@@ -37,7 +37,13 @@ npm install <br/>
 3. Now, run the Node JS app to in daemon mode using <b>forever start index.js </b> <br/>
 4. Use the external IP of app-server to access the Dress4Win App <br/>
 
+### Add/remove product
+1. In home directory, cd ~/Dress4Win6m3grp2/sql/ <br/>
+2. edit the .sql file, either 1 <br/>
+3. starting from line 24 to edit categories and line 61 to add/remove products <br/>
+
 ### Customise your product image
 1. In home directory, cd ~/Dress4Win6m3grp2/views/components/product/ <br/>
 2. Edit grid.ejs <i> using the editor of your choice </i>, change the source to the source of your image <i> (line 5 and line 9) </i>  <br/>
 E.g. src="https://dress4win.fashionantics.tk/image/<%= product.picture %>" to src="[your_image_endpoint_url]/<%= product.picture %>" <br/>
+
