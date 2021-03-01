@@ -29,7 +29,7 @@ curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh <br/>
 bash nodesource_setup.sh <br/>
 apt install -y nodejs <br/>
 npm install -g forever <br/>
-git clone https://github.com/learngcpwithmahesh/Dress4Win.git <br/>
+git clone https://github.com/Jangofett-162/Dress4Win6m3grp2.git <br/>
 cd Dress4Win <br/>
 npm install <br/>
 </b>
